@@ -77,8 +77,6 @@ df.head()
 
 
 
-
-
 ##### 6.分离数据集
 
 ```python
@@ -87,11 +85,7 @@ y = data.pop('price')
 
 
 
-
-
-
-
-##### 3.inplace = True 操纵地址:
+##### 7.inplace = True 操纵地址:
 
 ```python
 new_text = text  #指向了同一块地址
@@ -105,6 +99,27 @@ text
 new_text = text.copy() #创建了新的对象，并非同一块地址
 new_text.dropna(inplace = True)
 text #不发生改变
+```
+
+
+
+
+
+##### 8.change order
+
+```python
+df_id = df.id
+df = df.drop('id',axis=1)
+df.insert(0,'id',df_id)
+```
+
+
+
+##### 9.inner join
+
+```python
+intersected_df = pd.merge(Train_set['No'],Test_set['No'], how='inner')
+Train_set['No']
 ```
 
 
